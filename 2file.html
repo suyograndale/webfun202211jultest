@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+      <style>
+        .card{
+            margin:   200px  500px;
+            border: 1px solid black;
+            
+
+        }
+        
+
+        
+      </style>
+    </head>
+    <body>
+        <div class="card">
+        
+        <h1>Geekster@gmail.com</h1>
+        <h1>Mumbai</h1>
+        <input 
+        type="button"
+        name="submit"
+        id="btn"
+        onclick="FeatchUserData(method, url)"
+        value="FeatchData"
+         /></div>
+
+    </body>
+    <script>
+        const url ='https://jsonplaceholder.typicode.com/users';
+        document.getElementById('btn').addEventListener('click', fetchUserData);
+        
+        function fetchUserData(method,url){
+            return featch(url).then((res) => res.json());
+        }
+
+        fetchUaerData('GET',url)
+        .then((res)=> {
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    </script>
+</html>
